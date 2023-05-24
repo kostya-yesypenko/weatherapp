@@ -16,7 +16,7 @@ def index(request):
     if request.method == 'POST':
         city = request.POST['city']
         if any(c.isalpha() for c in city)==True:
-            res = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q='+city.replace(" ", "%20")+'&appid=4854c8446d6f2711040a523662774d82').read()
+            res = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q='+city.replace(" ", "%20")+'&appid=').read()
             json_data = json.loads(res)
             data= {
                 "country_code": str(json_data['sys']['country']),
